@@ -41,7 +41,7 @@ Users are able to:
 
 ### Links
 
-- Live Site URL: [gh-pages]()
+- Live Site URL: [gh-pages](https://mapokes.github.io/dictionary-app/)
 
 ## My process
 
