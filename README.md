@@ -35,7 +35,7 @@ Users are able to:
 
 ![screenshots1](https://i.postimg.cc/mbG1jzvM/1.png)
 ![screenshots2](https://i.postimg.cc/ZY0WnrNk/2.png)
-![screenshots3](https://i.postimg.cc/ZnyYcxPC/3.png)
+![screenshots3](https://i.postimg.cc/j2zZwppS/3.png)
 ![screenshots4](https://i.postimg.cc/bJ5NkBt7/4.png)
 ![screenshots5](https://i.postimg.cc/HxnkJgV0/5.png)
 
