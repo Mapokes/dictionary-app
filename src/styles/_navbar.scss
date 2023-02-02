@@ -1,0 +1,143 @@
+@use "./config" as *;
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: grid;
+  grid-template-areas: ". alias-logo alias-options .";
+  grid-template-columns: 1fr minmax(max-content, 500px) minmax(max-content, 500px) 1fr;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid $clr-grey;
+  background: var(--clr-bg);
+  z-index: 100;
+
+  &__logo {
+    grid-area: alias-logo;
+    filter: invert(0.3);
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    font-size: 2rem;
+  }
+}
+
+.nav-options {
+  grid-area: alias-options;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: 0.5rem;
+  padding-right: 1rem;
+}
+
+.fonts-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+
+  &__fonts-select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    background: var(--clr-bg);
+    border: none;
+    padding-right: 1.1rem;
+    font-weight: fontWeight(bold);
+    font-size: 1rem;
+    color: var(--clr-select);
+
+    .fonts-select-serif {
+      @include fontChange(serif);
+    }
+
+    .fonts-select-sans-serif {
+      @include fontChange(sans-serif);
+    }
+
+    .fonts-select-monospace {
+      @include fontChange(monospace);
+    }
+  }
+
+  &__fonts-select::-ms-expand {
+    display: none;
+  }
+
+  &__fonts-select:hover {
+    cursor: pointer;
+  }
+
+  &__arrow {
+    @include colorInvert();
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    font-size: 1rem;
+  }
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding-left: 1rem;
+  border-left: 1px solid changeAlpha($clr-grey, 0.3);
+
+  &__icon {
+    font-size: 1rem;
+  }
+}
+
+.dark .toggle-container__icon {
+  @include colorInvert();
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 34px;
+    background-color: $clr-grey;
+    transition: 0.4s;
+  }
+
+  &__slider::before {
+    position: absolute;
+    content: "";
+    width: 12px;
+    aspect-ratio: 1;
+    left: 4px;
+    bottom: 4px;
+    border-radius: 50%;
+    background-color: $clr-white;
+    transition: 0.4s;
+  }
+
+  input:checked + &__slider {
+    background-color: changeAlpha($clr-violet, 0.7);
+  }
+
+  input:checked + &__slider::before {
+    transform: translateX(20px);
+  }
+
+  input:hover {
+    cursor: pointer;
+  }
+}

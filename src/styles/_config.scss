@@ -1,0 +1,102 @@
+// colors
+$clr-red: #ff5252;
+$clr-violet: #a445ed;
+$clr-blue: #458eed;
+$clr-grey: #757575;
+$clr-dark-grey: #1f1f1f;
+$clr-light-grey: #e8e8e8;
+$clr-white: #ffffff;
+$clr-black: #000000;
+$invert-black-violet: invert(40%) sepia(53%) saturate(7189%) hue-rotate(259deg) brightness(58%) contrast(90%);
+
+// default colors
+body {
+  --clr-bg: #{$clr-white};
+  --clr-select: #{$clr-black};
+  --clr-input-bg: #{$clr-light-grey};
+  --clr-input-text: #{$clr-black};
+  --clr-text: #{$clr-black};
+  --clr-shadow-input: #{$clr-grey};
+  --clr-loading: #{$clr-grey};
+}
+
+// dark theme colors
+.dark {
+  --clr-bg: #{$clr-black};
+  --clr-select: #{$clr-white};
+  --clr-input-bg: #{$clr-dark-grey};
+  --clr-input-text: #{$clr-white};
+  --clr-text: #{darken($clr-white, 30%)};
+  --clr-shadow-input: #{lighten($clr-dark-grey, 10%)};
+  --clr-loading: #{$clr-grey};
+}
+
+// font families
+$font-families: (
+  "monospace": (
+    "Inconsolata",
+    monospace,
+  ),
+  "sans-serif": (
+    "Inter",
+    sans-serif,
+  ),
+  "serif": (
+    "Lora",
+    serif,
+  ),
+);
+
+// font weights
+$fnt-weights: (
+  "normal": 400,
+  "bold": 700,
+);
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// functions
+@function fontWeight($font-weight) {
+  @return map-get($fnt-weights, $font-weight);
+}
+
+@function changeAlpha($color, $alpha) {
+  @return rgba($color, $alpha);
+}
+
+// mixins
+@mixin fontChange($class) {
+  font-family: map-get($font-families, $class);
+}
+
+@mixin colorInvert() {
+  filter: #{$invert-black-violet};
+}
+
+@mixin loading() {
+  @keyframes lds-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+@mixin media-mid {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin media-lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+} ;

@@ -1,0 +1,59 @@
+@use "./config" as *;
+
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 500px;
+  width: 100%;
+  margin-top: 3rem;
+  padding-right: 1rem;
+  border-radius: 15px;
+  background-color: var(--clr-input-bg);
+  position: relative;
+
+  & .error-msg {
+    position: absolute;
+    right: 1rem;
+    bottom: -1rem;
+    font-size: 0.7rem;
+    font-weight: fontWeight(bold);
+    color: darken($clr-red, 30%);
+  }
+
+  &__input {
+    width: 90%;
+    border: none;
+    outline: none;
+    padding: 0.7rem 1rem;
+    background-color: transparent;
+    font-weight: fontWeight(bold);
+    font-size: 1rem;
+    color: var(--clr-input-text);
+  }
+
+  &__input:hover {
+    cursor: pointer;
+  }
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+  }
+
+  &__icon {
+    color: $clr-black;
+    font-size: 1.3rem;
+  }
+}
+
+.search-container:hover {
+  box-shadow: 0px 1px 2px 0px var(--clr-shadow-input);
+}
+
+.dark .search-container__icon {
+  @include colorInvert();
+}

@@ -1,0 +1,43 @@
+@use "./config" as *;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--clr-bg);
+}
+
+.serif {
+  @include fontChange(serif);
+
+  input {
+    @include fontChange(serif);
+  }
+}
+
+.sans-serif {
+  @include fontChange(sans-serif);
+
+  input {
+    @include fontChange(sans-serif);
+  }
+}
+
+.monospace {
+  @include fontChange(monospace);
+
+  input {
+    @include fontChange(monospace);
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: inherit;
+  max-width: 767px;
+  width: 100%;
+  padding: 1rem 2rem;
+}
