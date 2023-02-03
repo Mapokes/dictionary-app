@@ -1,7 +1,7 @@
 # Dictionary App
 
 Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-[DictionaryAPI](https://dictionaryapi.dev/)
+Fetch from [DictionaryAPI](https://dictionaryapi.dev/)
 
 ## Table of contents
 
