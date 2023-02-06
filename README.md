@@ -4,6 +4,10 @@ Bootstrapped with [Create React App](https://github.com/facebook/create-react-ap
 
 Fetch from [DictionaryAPI](https://dictionaryapi.dev/).
 
+Oxford Dictionary app version [vercel live site](https://dictionary-app-nodejs.vercel.app/)
+
+Link to github repo of Oxford Dictionary app version [github repo](https://github.com/Mapokes/dictionary-app-nodejs)
+
 ## Table of contents
 
 - [Overview](#overview)
